@@ -24,18 +24,15 @@
     // }).begin();
 
     webgazer.begin();
+    webgazer.showPredictionPoints(true);
     $interval(function() {
       var prediction = webgazer.getCurrentPrediction();
       if (prediction) {
         var x = prediction.x;
         var y = prediction.y;
-        $log.info('XY:' + x + ' ' + y);
-        $('.pebble-logo').css({
-          left: x + 'px',
-          top: y + 'px'
-        });
+        // $log.info('XY:' + x + ' ' + y);
       } else {
-        $log.info('no pred');
+        // $log.info('no pred');
       }
     }, 100);
   }

@@ -9995,7 +9995,7 @@ if (typeof exports !== 'undefined') {
 
     //DEBUG variables
     //debug control boolean
-    var showGazeDot = false;
+    var showGazeDot = true;
     //debug element (starts offscreen)
     var gazeDot = document.createElement('div');
     gazeDot.style.position = 'absolute';
