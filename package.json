@@ -25,6 +25,7 @@
     "gulp-sass": "^2.3.0",
     "gulp-sourcemaps": "^2.0.0-alpha",
     "gulp-watch": "^4.3.5",
+    "jquery": "^2.2.4",
     "jshint": "^2.9.2",
     "jshint-stylish": "^2.1.0",
     "lodash": "^4.11.1"

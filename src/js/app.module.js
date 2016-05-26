@@ -24,7 +24,7 @@
     // }).begin();
 
     webgazer.begin();
-
+    $
     $interval(function() {
       var prediction = webgazer.getCurrentPrediction();
       if (prediction) {
