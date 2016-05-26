@@ -4,6 +4,11 @@
   angular.module('app').controller('trainingCtrl', TrainingCtrl);
 
   function TrainingCtrl($rootScope) {
+
+    var viewHeight = $(window).height();
+    var viewWidth = $(window).width();
+
+
     var vm = this;
     $rootScope.isTraining = true;
     var div = $('#training-point')
@@ -12,20 +17,20 @@
 
     setTimeout(function() {
       console.log("First");
+      // simulateClick(100, 100);
       $('#training-point').css(
-        { right: '10%' }
+        { left: '', right: 100 }
       );
-        document.getElementById('training-point').click();
-        moveDiv();
+      moveDiv();
     }, 2000);
 
     function moveDiv(){
       setTimeout(function() {
         console.log("Second");
+        // simulateClick((viewWidth - 100), 100);
         $('#training-point').css(
-          { top: '90%' }
-        );
-        document.getElementById('training-point').click();
+          { top: viewHeight - 100 }
+        ); 
         moveDiv2();
       }, 2000);
     }
@@ -33,10 +38,10 @@
     function moveDiv2(){
       setTimeout(function() {
         console.log("Third");
+        // simulateClick((viewWidth - 100), (viewHeight - 100));
         $('#training-point').css(
-          { left: '10%' }
+          { left: 100, right: '' }
         );
-        document.getElementById('training-point').click();
         moveDiv3();
       }, 2000);
     }
@@ -44,16 +49,17 @@
     function moveDiv3(){
       setTimeout(function() {
         console.log("Fourth");
+        // simulateClick((viewWidth - 100), 100);
         $('#training-point').css(
           { top: '50%', left: '50%' }
         );
-        document.getElementById('training-point').click();
         finishTraining();
       }, 2000);
     }
 
     function finishTraining() {
       setTimeout(function() {
+        // simulateClick((viewWidth/2), (viewHeight/2));
         console.log("Finised Training");
         $rootScope.isTraining = false;      
       }, 2000);
@@ -71,6 +77,16 @@
         evObj.initEvent(etype, true, false);
         el.dispatchEvent(evObj);
       }
+    }
+
+    function simulateClick(x, y) {
+        var clickEvent= document.createEvent('MouseEvents');
+        clickEvent.initMouseEvent(
+          'click', true, true, window, 0,
+          0, 0, x, y, false, false,
+          false, false, 0, null
+        );
+        document.elementFromPoint(x, y).dispatchEvent(clickEvent);
     }
 
     // $timeout(function() {
