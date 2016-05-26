@@ -25,6 +25,7 @@ var path = {
 
 var files = {
   vendor: [
+    path.vendor + 'jquery/dist/jquery.min.js',
     path.vendor + 'lodash/lodash.min.js',
     path.vendor + 'angular/angular.min.js'
   ],
