@@ -7,7 +7,7 @@ npm-debug.log
 
 # Built files
 .sass-cache
-/public/css
+/public/css/styles.css
 /public/js/vendor.js
 /public/js/app.js
 /public/js/app.js.map
