@@ -15,11 +15,13 @@
     <img src="img/pebble-logo.png">
   </div>
 
-  <div class="training-container" ng-controller="trainingCtrl as vm">
+  <div ng-show="vm.onTraining" class="training-container" ng-controller="trainingCtrl as vm">
     {{vm.message}}
+    <div id="training-point" style="height: 10px; width: 10px; background: black; position: fixed">
+    </div>
   </div>
 
-  <div class="gazing-container" ng-controller="gazingCtrl as vm">
+  <div ng-hide="vm.onTraining" class="gazing-container" ng-controller="gazingCtrl as vm">
     {{vm.message}}
     <div class="row">
       <div class="text-center col-lg-12">
