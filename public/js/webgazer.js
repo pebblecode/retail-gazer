@@ -10155,19 +10155,24 @@ if (typeof exports !== 'undefined') {
      * records click data and passes it to the regression model
      */
     var clickListener = function(event) {
+      	console.log("clickListener", event.clientX, event.clientY);
+
         if (paused) {
-        	console.log("Paused");
+	        	console.log("Paused");
             return;
         }
         var features = getPupilFeatures(videoElementCanvas, webgazer.params.imgWidth, webgazer.params.imgHeight);
+        		console.log('features: ', features);
         if (regs.length == 0) {
             console.log('regression not set, call setRegression()');
             return null;
         }
         for (var reg in regs) {
+        		console.log('reg: ', regs);
             regs[reg].addData(features, [event.clientX, event.clientY], eventTypes[0]); // eventType[0] === 'click'
         }
     }
+    window.clickListener = clickListener;
 
     /**
      * records mouse movement data and passes it to the regression model
@@ -10192,6 +10197,7 @@ if (typeof exports !== 'undefined') {
             regs[reg].addData(features, [event.clientX, event.clientY], eventTypes[1]); //eventType[1] === 'move'
         }
     }
+    window.moveListener = moveListener;
 
     /** loads the global data and passes it to the regression model 
      * 

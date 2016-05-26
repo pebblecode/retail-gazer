@@ -17,7 +17,8 @@
 
     setTimeout(function() {
       console.log("First");
-      simulateClick(100, 100);
+      simulateClick(0, 0);
+      // simulateClick(100, 100);
       $('#training-point').css(
         { left: '', right: 100 }
       );
@@ -27,7 +28,8 @@
     function moveDiv(){
       setTimeout(function() {
         console.log("Second");
-        simulateClick((viewWidth - 100), 100);
+        // simulateClick((viewWidth - 100), 100);
+        simulateClick((viewWidth), 0);
         $('#training-point').css(
           { top: viewHeight - 100 }
         ); 
@@ -38,7 +40,8 @@
     function moveDiv2(){
       setTimeout(function() {
         console.log("Third");
-        simulateClick((viewWidth - 100), (viewHeight - 100));
+        // simulateClick((viewWidth - 100), (viewHeight - 100));
+        simulateClick((viewWidth), (viewHeight));
         $('#training-point').css(
           { left: 100, right: '' }
         );
@@ -49,7 +52,8 @@
     function moveDiv3(){
       setTimeout(function() {
         console.log("Fourth");
-        simulateClick((viewWidth - 100), 100);
+        simulateClick(0, (viewHeight));
+        // simulateClick(100, (viewHeight - 100));
         $('#training-point').css(
           { top: '50%', left: '50%' }
         );
@@ -66,13 +70,34 @@
     }
 
     function simulateClick(x, y) {
-        var clickEvent= document.createEvent('MouseEvents');
-        clickEvent.initMouseEvent(
-          'click', true, true, window, 0,
-          0, 0, x, y, false, false,
-          false, false, 0, null
-        );
-        document.elementFromPoint(x, y).dispatchEvent(clickEvent);
+        window.moveListener({ clientX: x, clientY: y });
+        window.moveListener({ clientX: x, clientY: y });
+        window.moveListener({ clientX: x, clientY: y });
+        window.clickListener({ clientX: x, clientY: y });
+        window.moveListener({ clientX: x, clientY: y });
+        window.clickListener({ clientX: x, clientY: y });
+        window.moveListener({ clientX: x, clientY: y });
+        window.clickListener({ clientX: x, clientY: y });
+        window.moveListener({ clientX: x, clientY: y });
+        window.clickListener({ clientX: x, clientY: y });
+        window.moveListener({ clientX: x, clientY: y });
+        window.moveListener({ clientX: x, clientY: y });
+        window.moveListener({ clientX: x, clientY: y });
+        window.clickListener({ clientX: x, clientY: y });
+        window.moveListener({ clientX: x, clientY: y });
+        window.clickListener({ clientX: x, clientY: y });
+        window.moveListener({ clientX: x, clientY: y });
+        window.clickListener({ clientX: x, clientY: y });
+        window.moveListener({ clientX: x, clientY: y });
+        window.clickListener({ clientX: x, clientY: y });
+
+        // var clickEvent= document.createEvent('MouseEvents');
+        // clickEvent.initMouseEvent(
+        //   'click', true, true, window, 0,
+        //   0, 0, x, y, false, false,
+        //   false, false, 0, null
+        // );
+        // document.elementFromPoint(x, y).dispatchEvent(clickEvent);
     }
 
     // $timeout(function() {
