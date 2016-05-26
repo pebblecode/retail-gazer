@@ -5,7 +5,7 @@
 
   function TrainingCtrl($rootScope) {
     var vm = this;
-    $rootScope.isTraining = true;    
+    $rootScope.isTraining = true;
     var div = $('#training-point')
 
     vm.message = 'training';

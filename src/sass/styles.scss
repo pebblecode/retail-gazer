@@ -45,6 +45,13 @@ body {
   height: 100%;
 }
 
+.focusdot {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background-color: green;
+}
+
 .banner {
   top: 20px;
   left: 20px;
