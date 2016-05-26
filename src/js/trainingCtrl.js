@@ -15,8 +15,9 @@
       $('#training-point').css(
         { right: '10%' }
       );
+      clickDiv();
       moveDiv();
-    }, 3000);
+    }, 2000);
 
     function moveDiv(){
       setTimeout(function() {
@@ -24,8 +25,9 @@
         $('#training-point').css(
           { top: '90%' }
         );
+        clickDiv();
         moveDiv2();
-      }, 3000);
+      }, 2000);
     }
 
     function moveDiv2(){
@@ -34,8 +36,9 @@
         $('#training-point').css(
           { left: '10%' }
         );
+        clickDiv();
         moveDiv3();
-      }, 3000);
+      }, 2000);
     }
 
     function moveDiv3(){
@@ -44,15 +47,20 @@
         $('#training-point').css(
           { top: '50%', left: '50%' }
         );
+        clickDiv();
         finishTraining();
-      }, 3000);
+      }, 2000);
     }
 
     function finishTraining() {
       setTimeout(function() {
         console.log("Finised Training");
-        $rootScope.isTraining = true;      
-      });
+        $rootScope.isTraining = false;      
+      }, 2000);
+    }
+
+    function clickDiv() {
+      $('#training-div').click();
     }
 
     // $timeout(function() {
