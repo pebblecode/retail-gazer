@@ -23,7 +23,7 @@
         { left: '', right: 100 }
       );
       moveDiv();
-    }, 2000);
+    }, 5000);
 
     function moveDiv(){
       setTimeout(function() {
