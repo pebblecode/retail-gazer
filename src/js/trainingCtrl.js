@@ -17,7 +17,7 @@
 
     setTimeout(function() {
       console.log("First");
-      // simulateClick(100, 100);
+      simulateClick(100, 100);
       $('#training-point').css(
         { left: '', right: 100 }
       );
@@ -27,7 +27,7 @@
     function moveDiv(){
       setTimeout(function() {
         console.log("Second");
-        // simulateClick((viewWidth - 100), 100);
+        simulateClick((viewWidth - 100), 100);
         $('#training-point').css(
           { top: viewHeight - 100 }
         ); 
@@ -38,7 +38,7 @@
     function moveDiv2(){
       setTimeout(function() {
         console.log("Third");
-        // simulateClick((viewWidth - 100), (viewHeight - 100));
+        simulateClick((viewWidth - 100), (viewHeight - 100));
         $('#training-point').css(
           { left: 100, right: '' }
         );
@@ -49,7 +49,7 @@
     function moveDiv3(){
       setTimeout(function() {
         console.log("Fourth");
-        // simulateClick((viewWidth - 100), 100);
+        simulateClick((viewWidth - 100), 100);
         $('#training-point').css(
           { top: '50%', left: '50%' }
         );
@@ -59,24 +59,10 @@
 
     function finishTraining() {
       setTimeout(function() {
-        // simulateClick((viewWidth/2), (viewHeight/2));
+        simulateClick((viewWidth/2), (viewHeight/2));
         console.log("Finised Training");
         $rootScope.isTraining = false;      
       }, 2000);
-    }
-
-    function clickDiv() {
-      $('#training-div').click();
-    }
-
-    function eventFire(el, etype){
-      if (el.fireEvent) {
-        el.fireEvent('on' + etype);
-      } else {
-        var evObj = document.createEvent('Events');
-        evObj.initEvent(etype, true, false);
-        el.dispatchEvent(evObj);
-      }
     }
 
     function simulateClick(x, y) {

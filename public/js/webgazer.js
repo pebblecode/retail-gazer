@@ -10156,6 +10156,7 @@ if (typeof exports !== 'undefined') {
      */
     var clickListener = function(event) {
         if (paused) {
+        	console.log("Paused");
             return;
         }
         var features = getPupilFeatures(videoElementCanvas, webgazer.params.imgWidth, webgazer.params.imgHeight);
