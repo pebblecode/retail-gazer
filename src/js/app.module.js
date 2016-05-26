@@ -24,13 +24,16 @@
     // }).begin();
 
     webgazer.begin();
-    $
     $interval(function() {
       var prediction = webgazer.getCurrentPrediction();
       if (prediction) {
         var x = prediction.x;
         var y = prediction.y;
         $log.info('XY:' + x + ' ' + y);
+        $('.pebble-logo').css({
+          left: x + 'px',
+          top: y + 'px'
+        });
       } else {
         $log.info('no pred');
       }
