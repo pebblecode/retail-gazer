@@ -43,6 +43,7 @@ body {
 .training-container, .gazing-container {
   width: 100%;
   height: 100%;
+  position: fixed; // needed to set deadzone
 }
 
 .focusdot {

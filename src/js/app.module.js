@@ -29,6 +29,8 @@
 
     var viewHeight = $(window).height();
     var viewWidth = $(window).width();
+    var deadZone = $('.result-img')[0].getBoundingClientRect();
+    $log.info('deadZone: ', deadZone);
 
     var images = {
       'top-left': 'img/clothing/shoes.jpg',
@@ -90,6 +92,12 @@
 
 
     function getQuadrant(meanX, meanY) {
+      var inDeadZone = meanX > deadZone.left && meanX < deadZone.right && meanY > deadZone.top && meanY < deadZone.bottom;
+      
+      if (inDeadZone) {
+        return 'dead-zone';
+      }
+
       var isTop = meanY < viewHeight / 2;
       var isLeft = meanX < viewWidth / 2;
 
