@@ -15,8 +15,8 @@
       $('#training-point').css(
         { right: '10%' }
       );
-      clickDiv();
-      moveDiv();
+        document.getElementById('training-point').click();
+        moveDiv();
     }, 2000);
 
     function moveDiv(){
@@ -25,7 +25,7 @@
         $('#training-point').css(
           { top: '90%' }
         );
-        clickDiv();
+        document.getElementById('training-point').click();
         moveDiv2();
       }, 2000);
     }
@@ -36,7 +36,7 @@
         $('#training-point').css(
           { left: '10%' }
         );
-        clickDiv();
+        document.getElementById('training-point').click();
         moveDiv3();
       }, 2000);
     }
@@ -47,7 +47,7 @@
         $('#training-point').css(
           { top: '50%', left: '50%' }
         );
-        clickDiv();
+        document.getElementById('training-point').click();
         finishTraining();
       }, 2000);
     }
@@ -61,6 +61,16 @@
 
     function clickDiv() {
       $('#training-div').click();
+    }
+
+    function eventFire(el, etype){
+      if (el.fireEvent) {
+        el.fireEvent('on' + etype);
+      } else {
+        var evObj = document.createEvent('Events');
+        evObj.initEvent(etype, true, false);
+        el.dispatchEvent(evObj);
+      }
     }
 
     // $timeout(function() {
